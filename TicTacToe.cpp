@@ -3,6 +3,7 @@ using namespace std;
 
 void showgrid(void);
 void getInput(void);
+void check_winner(char a);
 bool check_if_same(int a, int b, int c);
 bool chooseWinner(void);
 void show_result();
@@ -57,12 +58,6 @@ void getInput(void)
     turn += 1;
 }
 
-void check_winner(char a) {
-    if (a == 'X') winner = 1;
-    else winner = 2;
-}
-
-
 bool check_if_same(int a, int b, int c)
 {
     if (lst[a] == lst[b] && lst[b] == lst[c]) {
@@ -70,6 +65,11 @@ bool check_if_same(int a, int b, int c)
         return true;
     }
     else return false;
+}
+
+void check_winner(char a) {
+    if (a == 'X') winner = 1;
+    else winner = 2;
 }
 
 bool chooseWinner(void)
